@@ -29,5 +29,6 @@ func GetProduct(w http.ResponseWriter, r *http.Request) {
 		{Name: "Notebook", Description: "Notebook Dell", Price: 1999.00, Quantity: 20},
 		{Name: "Mouse", Description: "Mouse Razr", Price: 399.00, Quantity: 30},
 	}
+
 	json.NewEncoder(w).Encode(products)
 }
