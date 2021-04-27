@@ -1,18 +1,11 @@
 package main
 
 import (
+	"golang-webapp/routes"
 	"log"
 	"net/http"
-
-	"github.com/gorilla/mux"
-
-	"golang-webapp/services"
 )
 
 func main() {
-
-	router := mux.NewRouter()
-	router.HandleFunc("/product", services.GetProducts).Methods("GET")
-
-	log.Fatal(http.ListenAndServe(":8000", router))
+	log.Fatal(http.ListenAndServe(":8000", routes.StartRoutes()))
 }
