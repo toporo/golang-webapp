@@ -15,5 +15,6 @@ func ConectionDatabase() *sql.DB {
 		log.Fatal("Connection database error: ", err.Error())
 	}
 
+	
 	return db
 }

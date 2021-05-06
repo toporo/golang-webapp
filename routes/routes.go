@@ -12,3 +12,4 @@ func StartRoutes() *mux.Router {
 
 	return router
 }
+	

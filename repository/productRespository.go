@@ -33,3 +33,22 @@ func GetProducts() []entities.Procuct {
 
 	return products
 }
+
+func CreateProduct(product entities.Procuct) string {
+
+	db := db.ConectionDatabase()
+
+	insertDatabase, err := db.Prepare("Insert into products(product_name, description, price, quantity) values($1, $2, $3, $4)")
+
+	if err != nil {
+		log.Fatal("Error prepare insert product: ", err.Error())
+	}
+
+	response, err := insertDatabase.Exec(product.Name, product.Description, product.Price, product.Quantity)
+
+	log.Fatal(response)
+
+	defer db.Close()
+
+	return ""
+}
